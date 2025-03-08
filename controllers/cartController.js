@@ -1,6 +1,6 @@
 import Cart from "../models/Cart";
 // Add to Cart
- const addToCart = async (req, res) => {
+  export const addToCart = async (req, res) => {
     try {
         const { artworkId } = req.body;
         let cart = await Cart.findOne({ user: req.user.id });

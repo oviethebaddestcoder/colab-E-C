@@ -1,6 +1,6 @@
-import Artwork from "../models/Auth";
+import Artwork from "../models/Artwork";
 
- const createArtwork = async (req, res) => {
+  export const createArtwork = async (req, res) => {
     try {
         const { title, description, price, image, category } = req.body;
         const newArtwork = new Artwork({
@@ -19,7 +19,7 @@ import Artwork from "../models/Auth";
     }
 };
 
-const getArtworks = async (req, res) => {
+ export const getArtworks = async (req, res) => {
     try {
         const artworks = await Artwork.find({ status: "available" });
         res.json(artworks);

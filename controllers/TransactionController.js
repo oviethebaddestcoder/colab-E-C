@@ -1,7 +1,7 @@
 import Cart from "../models/Cart";
 import Transaction from "../models/Transaction";
 
-const checkout = async (req, res) => {
+ export const checkout = async (req, res) => {
   try {
     const cart = await Cart.findOne({ user: req.user.id }).populate("items");
     if (!cart || cart.items.length === 0) {
@@ -32,7 +32,7 @@ const checkout = async (req, res) => {
 };
 
 // View Transaction History
- const getTransactions = async (req, res) => {
+  export const getTransactions = async (req, res) => {
   try {
     const transactions = await Transaction.find({
       $or: [{ buyer: req.user.id }, { seller: req.user.id }],
