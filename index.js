@@ -11,9 +11,9 @@ const app = express();
 // middleware
 app.use(express.json());
 // Use routes
-app.use
-app.use
-app.use
+app.use(),
+app.use(),
+app.use(),
 
 
 

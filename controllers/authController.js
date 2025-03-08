@@ -3,7 +3,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
 // USER REGISTRATION
- const registerUser = async (req, res) => {
+  export const registerUser = async (req, res) => {
     try {
         const { username, email, password } = req.body;
         const salt = await bcrypt.genSalt(10);
@@ -17,7 +17,7 @@ import jwt from "jsonwebtoken";
 };
 
 
- const loginUser = async (req, res) => {
+  export const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
         const user = await Auth.findOne({ email });
